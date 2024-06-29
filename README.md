@@ -2,21 +2,29 @@
 
 A basic portfolio website template made using Astro, Lightning CSS and Alpine.js
 
-- [Astro.js](https://astro.build)
+<div style="display: grid; grid-template-columns: repeat(2, 1fr)">
+
+<div>
     
-    A full-stack for creating HTML-first website using a simple HTML, CSS and Javascript. It's also support integration with other Front-End Libraries such as Alpine.js, React, Vue, Svelte and many others.
+- [Astro.js](https://astro.build)
 
-- [LightningCSS](lightningcss.dev)
+A full-stack for creating HTML-first website using a simple HTML, CSS and Javascript. It's also support integration with other Front-End Libraries such as Alpine.js, React, Vue, Svelte and many others.
 
-    An Extremely Fast CSS Preprocessor that enabled modern CSS features such as nesting, custom media queries and more.
+-   [LightningCSS](lightningcss.dev)
 
-- [Alpine.js](alpinejs.dev)
+An Extremely Fast CSS Preprocessor that enabled modern CSS features such as nesting, custom media queries and more.
 
-    One of the most lightweight Front-End Libraries to make interactive website/app with less-effort.
+-   [Alpine.js](alpinejs.dev)
+
+One of the most lightweight Front-End Libraries to make interactive website/app with less-effort.
+</div>
+
+</div>
 
 ## Getting Started
 
 Clone and install all dependencies :
+
 ```bash
 git clone https://github.com/Nwekoder/portfolio_v1.git
 cd portfolio_v1
@@ -24,6 +32,7 @@ yarn install
 ```
 
 Run in development :
+
 ```bash
 yarn dev
 ```
