@@ -2,9 +2,8 @@
 
 A basic portfolio website template made using Astro, Lightning CSS and Alpine.js
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr)">
+![](https://raw.githubusercontent.com/Nwekoder/portfolio_v1/main/lighthouse-score.png)
 
-<div>
     
 - [Astro.js](https://astro.build)
 
@@ -17,9 +16,6 @@ An Extremely Fast CSS Preprocessor that enabled modern CSS features such as nest
 -   [Alpine.js](alpinejs.dev)
 
 One of the most lightweight Front-End Libraries to make interactive website/app with less-effort.
-</div>
-
-</div>
 
 ## Getting Started
 
