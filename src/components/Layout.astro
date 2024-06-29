@@ -1,0 +1,116 @@
+---
+import Navbar from "./Navbar.astro"
+
+interface Props {
+	title: string
+	description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<script>
+			import Alpine from "alpinejs"
+
+			window.Alpine = Alpine
+		</script>
+	</head>
+	<body>
+		<Navbar />
+
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url("https://fonts.googleapis.com/css?family=Noto%20Sans:700|Noto%20Sans:400");
+
+	@media (prefers-color-scheme: light) {
+		:root {
+			--text: #070f12;
+			--background: #e8f2f7;
+			--primary: #1e4f6c;
+			--secondary: #76bbe0;
+			--accent: #228bc3;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--text: #ebf3f7;
+			--background: #081217;
+			--primary: #94c6e2;
+			--secondary: #1f6489;
+			--accent: #3da5dd;
+		}
+	}
+
+	[x-cloak] {
+		display: none;
+	}
+
+	:root {
+		--br-sm: 540px;
+	}
+
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: "Noto Sans", sans-serif;
+		font-weight: 400;
+		background-color: var(--background);
+		color: var(--text);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-family: "Noto Sans", sans-serif;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	html {
+		font-size: 100%;
+	}
+
+	h1 {
+		font-size: clamp(2.489rem, 1.2597rem + 6.1464vw, 4.21rem);
+	}
+
+	h2 {
+		font-size: clamp(2.074rem, 1.2997rem + 3.8714vw, 3.158rem);
+	}
+
+	h3 {
+		font-size: clamp(1.728rem, 1.2701rem + 2.2893vw, 2.369rem);
+	}
+
+	h4 {
+		font-size: clamp(1.44rem, 1.1993rem + 1.2036vw, 1.777rem);
+	}
+
+	h5 {
+		font-size: clamp(1.2rem, 1.105rem + 0.475vw, 1.333rem);
+	}
+
+	small {
+		font-size: clamp(0.833rem, 0.8923rem + -0.2964vw, 0.75rem);
+	}
+</style>

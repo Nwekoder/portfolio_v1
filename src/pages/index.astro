@@ -1,0 +1,192 @@
+---
+import Image from "astro/components/Image.astro"
+import Layout from "../components/Layout.astro"
+
+import ProjectCard, {type Props as ProjectCardProps} from "../components/ProjectCard.astro"
+
+const projects:ProjectCardProps[] = [
+	{
+		name: "Team Bento",
+		description: "Portfolio site for my Freelance Programming Team.",
+		image_src: "https://placehold.co/640x480"
+	},
+	{
+		name: "Diskan Pangkep",
+		description: "Company Profile site of Dinas Perikanan Kabupaten Pangkep.",
+		image_src: "https://placehold.co/640x480"
+	},
+	{
+		name: "Stora",
+		description: "Store Management Progressive Web App made with React.",
+		image_src: "https://placehold.co/640x480"
+	},
+	{
+		name: "Persada App Portal",
+		description: "Gateway to access micro-application within PT. Global Tridaya Persada tools.",
+		image_src: "https://placehold.co/640x480"
+	},
+	{
+		name: "Puskesmas Lampia",
+		description: "Company Profile site of Puskesmas Lampia.",
+		image_src: "https://placehold.co/640x480"
+	}
+]
+---
+
+<Layout title="Nwekoder" description="A self-thaught Full-Stack Web Developer based on Makassar.">
+	<header>
+		<h1>Nwekoder</h1>
+		<p>A self-thaught Full-Stack Web Developer based on Makassar.</p>
+	</header>
+
+	<section class="project-section">
+		<h2>Featured Project</h2>
+
+		<div>
+			{projects.map(project => (
+				<ProjectCard {...project} />
+			))}
+		</div>
+	</section>
+
+	<section class="about-section">
+		<div>
+			<div class="text">
+				<div>
+					<h2>About Me</h2>
+					<p>
+						My name is Muhammad Chandra Hasan, everyone call me Chandra or Chan. I grew up on Pinrang, South Sulawesi and now I live in Makassar, South Sulawesi. I love
+						to learn new stuff about computer, especially programming. Not just learn, I also teach people how to code and choose their own path in the world of
+						programming.
+					</p>
+				</div>
+			</div>
+			
+			<Image loading="lazy" width={640} height={480} src="https://placehold.co/640x480" alt="Sick Ass pict of me">
+		</div>
+	</section>
+</Layout>
+
+<style scoped>
+	header {
+		height: 80vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h1,
+		p {
+			text-align: center;
+			width: fit-content;
+		}
+
+		h1 {
+			margin-bottom: 1rem;
+			background: linear-gradient(to bottom, var(--primary) 45%, var(--text) 80%);
+			color: transparent;
+			-webkit-background-clip: text;
+			max-width: 80%;
+		}
+
+		p {
+			opacity: 0.75;
+			max-width: 60%;
+		}
+	}
+
+	section {
+		min-height: 80vh;
+		display: flex;
+		flex-direction: column;
+		padding-inline: 1.275rem;
+		justify-content: center;
+
+		&:not(:last-child) {
+			margin-bottom: 2.75rem;
+		}
+
+		@media (min-width: 748px) {
+			& {
+				padding-inline: 4.75rem;
+			}
+		}
+
+		& > h2 {
+			margin-bottom: 2rem;
+		}
+
+		&.project-section > div {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			row-gap: 32px;
+			column-gap: 16px;
+
+			@media (min-width: 540px) {
+				& {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+
+			@media (min-width: 748px) {
+				& {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+
+			@media (min-width: 960px) {
+				& {
+					grid-template-columns: repeat(4, 1fr);
+				}
+			}
+		}
+
+		&.about-section {
+			padding: 0;
+
+			@media (min-width: 748px) {
+				& {
+					padding: 0;
+				}
+			}
+
+			& > div {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				row-gap: 32px;
+				column-gap: 16px;
+				align-items: center;
+
+				.text {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+
+					div {
+						width: 75%;
+
+						h2 {
+							margin-bottom: 1rem;
+						}
+
+						p {
+							line-height: 1.65;
+							letter-spacing: 0.5;
+						}
+					}
+				}
+
+				img {
+					aspect-ratio: 16/11;
+					width: 100%;
+					height: auto;
+					object-fit: cover;
+					object-position: center;
+					border-top-left-radius: 4px;
+					border-bottom-left-radius: 4px;
+				}
+			}
+		}
+	}
+</style>

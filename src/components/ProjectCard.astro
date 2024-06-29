@@ -1,0 +1,46 @@
+---
+import Image from 'astro/components/Image.astro'
+
+export interface Props {
+	image_src: string
+	image_alt?: string
+	name: string
+	description: string
+}
+
+const { description, image_src, image_alt, name } = Astro.props
+---
+
+<div>
+	<Image loading="eager" class="image" width={640} height={480} src={image_src} alt={image_alt || name} />
+	<h4>{name}</h4>
+	<p>{description}</p>
+</div>
+
+<style scoped>
+    div {
+        .image {
+            aspect-ratio: 16/9;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        div {
+            padding-inline: 16px;
+        }
+
+        h4 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: clamp(0.833rem, 0.8923rem + -0.2964vw, 0.75rem);
+            line-height: 1.65;
+            letter-spacing: 0.5;
+            max-width: 90%;
+        }
+    }
+</style>
