@@ -1,0 +1,66 @@
+header {
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 60%;
+		left: 43%;
+		transform: translate(-50%, -50%);
+		width: 15rem;
+		height: 15rem;
+		border-radius: 50%;
+		background-color: var(--accent);
+		z-index: -1;
+		opacity: 0.25;
+		animation: bg-change 30s linear infinite;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 43%;
+		left: 55%;
+		transform: translate(-50%, -50%);
+		width: 20rem;
+		height: 20rem;
+		border-radius: 50%;
+		background-color: var(--secondary);
+		z-index: -1;
+		opacity: 0.25;
+		animation: bg-change 30s linear infinite;
+	}
+
+	h1,
+	p {
+		text-align: center;
+		width: fit-content;
+	}
+
+	h1 {
+		margin-bottom: 1rem;
+		background: linear-gradient(to bottom, var(--primary) 45%, var(--text) 80%);
+		color: transparent;
+		-webkit-background-clip: text;
+		max-width: 80%;
+	}
+
+	p {
+		opacity: 0.75;
+		max-width: 60%;
+	}
+}
+@keyframes bg-change {
+	from {
+		filter: blur(32px) hue-rotate(0deg);
+	}
+
+	to {
+		filter: blur(32px) hue-rotate(360deg);
+	}
+}
