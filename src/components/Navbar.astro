@@ -11,7 +11,10 @@ const pathname = Astro.url.pathname
 		<a class={pathname === "/posts" ? "active" : ""} href="/posts">Posts</a>
 	</div>
 
-	<a href="https://wa.me/6285161351254" class="cta">Contact Me</a>
+	<a href="https://wa.me/6285161351254" class="cta">
+		<i class="fa-brands fa-whatsapp"></i>
+		<span>Contact Me</span>
+	</a>
 </nav>
 
 <script>
@@ -91,13 +94,14 @@ const pathname = Astro.url.pathname
 			}
 
 			a {
-				padding: 12px 20px;
+				padding: 8px 16px;
+				font-size: 14px;
 				position: relative;
 
 				&::before {
 					content: "";
 					position: absolute;
-					bottom: 2px;
+					bottom: -2px;
 					left: 50%;
 					transform: translateX(-50%);
 					width: 0;
@@ -124,6 +128,12 @@ const pathname = Astro.url.pathname
 
 			@media (min-width: 540px) {
 				display: flex;
+				gap: 8px;
+				align-items: center;
+			}
+
+			i {
+				font-size: 24px;
 			}
 		}
 	}
